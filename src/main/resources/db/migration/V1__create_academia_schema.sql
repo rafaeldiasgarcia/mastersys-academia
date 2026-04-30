@@ -1,27 +1,27 @@
 CREATE TABLE alunos
 (
-    id              SERIAL PRIMARY KEY,
-    nome            VARCHAR(155)                              NOT NULL,
-    data_nascimento DATE                                      NOT NULL,
-    genero          VARCHAR(1) CHECK ( genero IN ('M', 'F') ) NOT NULL,
-    telefone        VARCHAR(30)                               NOT NULL,
-    celular         VARCHAR(30)                               NOT NULL,
-    email           VARCHAR(155)                              NOT NULL UNIQUE,
+    id              BIGSERIAL PRIMARY KEY,
+    nome            VARCHAR(150)                            NOT NULL,
+    data_nascimento DATE                                    NOT NULL,
+    sexo            VARCHAR(1) CHECK ( sexo IN ('M', 'F') ) NOT NULL,
+    telefone        VARCHAR(30)                             NOT NULL,
+    celular         VARCHAR(30)                             NOT NULL,
+    email           VARCHAR(155)                            NOT NULL UNIQUE,
     observacao      TEXT,
-    endereco        VARCHAR(150)                              NOT NULL,
-    numero          VARCHAR(20)                               NOT NULL,
+    endereco        VARCHAR(150)                            NOT NULL,
+    numero          VARCHAR(20)                             NOT NULL,
     complemento     VARCHAR(100),
-    bairro          VARCHAR(100)                              NOT NULL,
-    cidade          VARCHAR(100)                              NOT NULL,
-    estado          VARCHAR(2)                                NOT NULL,
-    cep             VARCHAR(20)                               NOT NULL,
-    criado_em       TIMESTAMP                                 NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    atualizado_em   TIMESTAMP                                 NOT NULL DEFAULT CURRENT_TIMESTAMP
+    bairro          VARCHAR(100)                            NOT NULL,
+    cidade          VARCHAR(100)                            NOT NULL,
+    estado          VARCHAR(2)                              NOT NULL,
+    cep             VARCHAR(20)                             NOT NULL,
+    criado_em       TIMESTAMP                               NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    atualizado_em   TIMESTAMP
 );
 
 CREATE TABLE modalidades
 (
-    id    SERIAL PRIMARY KEY,
+    id    BIGSERIAL PRIMARY KEY,
     nome  VARCHAR(100) NOT NULL UNIQUE,
     ativa BOOLEAN      NOT NULL DEFAULT TRUE
 );
