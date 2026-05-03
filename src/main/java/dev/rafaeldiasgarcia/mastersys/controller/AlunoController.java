@@ -1,5 +1,6 @@
 package dev.rafaeldiasgarcia.mastersys.controller;
 
+import dev.rafaeldiasgarcia.mastersys.dto.AlunoFiltroRequest;
 import dev.rafaeldiasgarcia.mastersys.dto.AlunoRequest;
 import dev.rafaeldiasgarcia.mastersys.dto.AlunoResponse;
 import dev.rafaeldiasgarcia.mastersys.service.AlunoService;
@@ -27,9 +28,9 @@ public class AlunoController {
      }
 
      @GetMapping
-     public Page<AlunoResponse> listar(Pageable pageable) {
+     public Page<AlunoResponse> listar(AlunoFiltroRequest filtro, Pageable pageable) {
 
-         return alunoService.listar(pageable);
+         return alunoService.listar(filtro, pageable);
      }
 
      @GetMapping("/{id}")

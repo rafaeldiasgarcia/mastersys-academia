@@ -1,10 +1,12 @@
 package dev.rafaeldiasgarcia.mastersys.service;
 
 import dev.rafaeldiasgarcia.mastersys.domain.Aluno;
+import dev.rafaeldiasgarcia.mastersys.dto.AlunoFiltroRequest;
 import dev.rafaeldiasgarcia.mastersys.dto.AlunoRequest;
 import dev.rafaeldiasgarcia.mastersys.dto.AlunoResponse;
 import dev.rafaeldiasgarcia.mastersys.exception.RegraNegocioException;
 import dev.rafaeldiasgarcia.mastersys.repository.AlunoRepository;
+import dev.rafaeldiasgarcia.mastersys.specification.AlunoSpecification;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -30,9 +32,9 @@ public class AlunoService {
         return AlunoResponse.fromEntity(alunoSalvo);
     }
 
-    public Page<AlunoResponse> listar(Pageable pageable) {
+    public Page<AlunoResponse> listar(AlunoFiltroRequest filtro, Pageable pageable) {
 
-        return alunoRepository.findAll(pageable)
+        return alunoRepository.findAll(AlunoSpecification.comFiltros(filtro), pageable)
                 .map(AlunoResponse::fromEntity);
     }
 
