@@ -8,6 +8,7 @@ public record AlunoRequest(
         String nome,
         LocalDate dataNascimento,
         String sexo,
+        String telefone,
         String celular,
         String email,
         String obsevacao,
@@ -30,6 +31,7 @@ public record AlunoRequest(
         aluno.setNome(nome);
         aluno.setDataNascimento(dataNascimento);
         aluno.setSexo(sexo);
+        aluno.setTelefone(telefone);
         aluno.setCelular(celular);
         aluno.setEmail(email);
         aluno.setObservacao(obsevacao);
