@@ -74,3 +74,17 @@ Content-Type: application/json
   "estado": "SC",
   "cep": "88802410"
 }
+
+### Cadastrar aluno invalido
+POST {{baseUrl}}/alunos
+Content-Type: application/json
+
+{
+  "nome": "",
+  "dataNascimento": "1995-08-15",
+  "sexo": "maculino",
+  "email": "emailinvalido",
+  "obsevacao": "Aluno iniciante",
+  "estado": "Santa Catarina",
+  "cep": "88802410"
+}
