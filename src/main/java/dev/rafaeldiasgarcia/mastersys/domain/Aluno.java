@@ -3,6 +3,7 @@ package dev.rafaeldiasgarcia.mastersys.domain;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "alunos")
@@ -36,20 +37,20 @@ public class Aluno {
     private String cep;
 
     @Column(name = "criado_em")
-    private LocalDate criadoEm;
+    private LocalDateTime criadoEm;
 
     @Column(name = "atualizado_em")
-    private LocalDate atualizadoEm;
+    private LocalDateTime atualizadoEm;
 
 
     @PrePersist
     public void prePersist() {
-        criadoEm = LocalDate.now();
+        criadoEm = LocalDateTime.now();
     }
 
     @PreUpdate
     public void preUpdate() {
-        atualizadoEm = LocalDate.now();
+        atualizadoEm = LocalDateTime.now();
     }
 
     public Long getId() {
@@ -172,19 +173,19 @@ public class Aluno {
         this.cep = cep;
     }
 
-    public LocalDate getCriadoEm() {
+    public LocalDateTime getCriadoEm() {
         return criadoEm;
     }
 
-    public void setCriadoEm(LocalDate criadoEm) {
+    public void setCriadoEm(LocalDateTime criadoEm) {
         this.criadoEm = criadoEm;
     }
 
-    public LocalDate getAtualizadoEm() {
+    public LocalDateTime getAtualizadoEm() {
         return atualizadoEm;
     }
 
-    public void setAtualizadoEm(LocalDate atualizadoEm) {
+    public void setAtualizadoEm(LocalDateTime atualizadoEm) {
         this.atualizadoEm = atualizadoEm;
     }
 }
