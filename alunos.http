@@ -104,4 +104,11 @@ GET {{baseUrl}}/alunos?estado=SC&page=0&size=10&sort=nome,asc
 ### Listar por email
 GET {{baseUrl}}/alunos?email=vanessa@email.com&page=0&size=10&sort=nome,asc
 
+### Faturamento mensal
+GET {{baseUrl}}/relatorios/faturamento-mensal
 
+### Alunos por cidade
+GET {{baseUrl}}/relatorios/alunos-por-cidade
+
+### Faturas em aberto
+GET {{baseUrl}}/relatorios/faturas-em-aberto
