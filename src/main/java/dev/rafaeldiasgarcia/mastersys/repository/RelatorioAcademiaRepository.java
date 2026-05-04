@@ -48,7 +48,7 @@ public interface RelatorioAcademiaRepository extends Repository<FaturaMatricula,
                 FROM faturas_matriculas f
                 JOIN matriculas m ON m.id = f.matricula_id
                 JOIN alunos a ON a.id = m.aluno_id
-                WHERE f.status = 'ABERTA'
+                WHERE TRIM(UPPER(f.status)) = 'ABERTA'
                 ORDER BY f.data_vencimento desc
                 """,
             nativeQuery = true
